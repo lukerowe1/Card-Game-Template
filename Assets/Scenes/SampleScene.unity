@@ -276,6 +276,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 99ef4bccd68e84d9ba6e7c8051daf70b, type: 3}
+--- !u!1 &440803140 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 139944937306382617, guid: 99ef4bccd68e84d9ba6e7c8051daf70b, type: 3}
+  m_PrefabInstance: {fileID: 440803139}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &454939644
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -459,14 +464,14 @@ MonoBehaviour:
   - {fileID: 1126644538999475434, guid: 17e906621820045c3ab6aae59feeace5, type: 3}
   - {fileID: 4608709814338197990, guid: 99ef4bccd68e84d9ba6e7c8051daf70b, type: 3}
   - {fileID: 4608709814338197990, guid: 99ef4bccd68e84d9ba6e7c8051daf70b, type: 3}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  cardPrefab: {fileID: 0}
-  horseHearts: {fileID: 0}
-  horseDiamonds: {fileID: 0}
-  horseClubs: {fileID: 0}
-  horseSpades: {fileID: 0}
+  - {fileID: 1770523411}
+  - {fileID: 1770523411}
+  - {fileID: 1770523411}
+  cardPrefab: {fileID: 440803140}
+  horseHearts: {fileID: 851627046}
+  horseDiamonds: {fileID: 85815433}
+  horseClubs: {fileID: 1576613580}
+  horseSpades: {fileID: 295696212}
 --- !u!4 &622756966
 Transform:
   m_ObjectHideFlags: 0
@@ -626,7 +631,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   deck: []
-  cardPrefab: {fileID: 9120333683378422306}
+  cardPrefab: {fileID: 440803140}
   horseHearts: {fileID: 851627046}
   horseDiamonds: {fileID: 85815433}
   horseClubs: {fileID: 1576613580}
@@ -697,6 +702,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 970200069765969068, guid: 99ef4bccd68e84d9ba6e7c8051daf70b, type: 3}
   m_PrefabInstance: {fileID: 440803139}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1770523411 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4608709814338197990, guid: 99ef4bccd68e84d9ba6e7c8051daf70b, type: 3}
+  m_PrefabInstance: {fileID: 440803139}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 440803140}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0fa534983bed543169ce438dfad802a6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!224 &4002591297304670402
 RectTransform:
   m_ObjectHideFlags: 0
@@ -857,11 +873,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fdb6ebaa2881b4f01b3a60eb49c36152, type: 3}
---- !u!1 &9120333683378422306 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6245944316687888461, guid: fdb6ebaa2881b4f01b3a60eb49c36152, type: 3}
-  m_PrefabInstance: {fileID: 9120333683378422305}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
