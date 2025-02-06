@@ -77,22 +77,3 @@ public class GameManager : MonoBehaviour
         }
     }
 }
-
-using UnityEngine;
-
-public class Horse
-{
-    public string Suit { get; private set; }
-    public int Position { get; private set; }
-
-    public Horse(string suit)
-    {
-        Suit = suit;
-        Position = 0;
-    }
-
-    public void MoveForward()
-    {
-        Position++;
-    }
-}
