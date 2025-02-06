@@ -6,6 +6,7 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager gm;
     public List<Card> deck = new List<Card>();
+    public GameObject cardPrefab; // Reference to the card prefab
     public GameObject horseHearts;
     public GameObject horseDiamonds;
     public GameObject horseClubs;
@@ -40,12 +41,29 @@ public class GameManager : MonoBehaviour
 
     void InitializeDeck()
     {
-        // Initialize the deck with cards (this is a placeholder, you need to implement the actual card initialization)
+        string[] suits = { "hearts", "diamonds", "clubs", "spades" };
+        for (int i = 0; i < suits.Length; i++)
+        {
+            for (int j = 1; j <= 13; j++)
+            {
+                GameObject cardObject = Instantiate(cardPrefab);
+                Card card = cardObject.GetComponent<Card>();
+                card.suit = suits[i];
+                card.value = j;
+                deck.Add(card);
+            }
+        }
     }
 
     void ShuffleDeck()
     {
-        // Shuffle the deck (this is a placeholder, you need to implement the actual shuffle logic)
+        for (int i = 0; i < deck.Count; i++)
+        {
+            Card temp = deck[i];
+            int randomIndex = Random.Range(0, deck.Count);
+            deck[i] = deck[randomIndex];
+            deck[randomIndex] = temp;
+        }
     }
 
     void FlipCard()
