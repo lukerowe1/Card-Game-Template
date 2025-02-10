@@ -3,7 +3,13 @@ guid: 8ee8c48878610400591dbc552a9c8d09
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - cardPrefab: {fileID: 139944937306382617, guid: 99ef4bccd68e84d9ba6e7c8051daf70b, type: 3}
+  - horseHearts: {fileID: 1863821613086259739, guid: 737c1282911c44c63b9eb20625ff1fa1, type: 3}
+  - horseDiamonds: {fileID: 1280165703765963415, guid: 331c662a7b5eb4915ab430cdd2d42ff2, type: 3}
+  - horseClubs: {fileID: 4375346238666891314, guid: 5ec9264136bdd472890b6cde8c249e5b, type: 3}
+  - horseSpades: {fileID: 3430361322557661400, guid: 340678b4a905344688b0d0bba9c28e4d, type: 3}
+  - deckParent: {fileID: 8031324947387334707, guid: 17e906621820045c3ab6aae59feeace5, type: 3}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

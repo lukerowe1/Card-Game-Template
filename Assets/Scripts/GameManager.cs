@@ -11,6 +11,7 @@ public class GameManager : MonoBehaviour
     public GameObject horseDiamonds;
     public GameObject horseClubs;
     public GameObject horseSpades;
+    public Transform deckParent; // Reference to the Deck GameObject
 
     private void Awake()
     {
@@ -46,7 +47,7 @@ public class GameManager : MonoBehaviour
         {
             for (int j = 1; j <= 13; j++)
             {
-                GameObject cardObject = Instantiate(cardPrefab);
+                GameObject cardObject = Instantiate(cardPrefab, deckParent);
                 Card card = cardObject.GetComponent<Card>();
                 card.suit = suits[i];
                 card.value = j;
