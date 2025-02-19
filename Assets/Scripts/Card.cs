@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using TMPro;
 
 public class Card : MonoBehaviour
 {
@@ -11,18 +13,34 @@ public class Card : MonoBehaviour
     public Sprite clubsSprite;
     public Sprite spadesSprite;
 
+    public GameObject blank;
+
+    TextMeshProUGUI valueText;
+    TextMeshProUGUI suitText;
+    
+
     private SpriteRenderer spriteRenderer;
 
     void Awake()
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
+        print("Card Awake");
+        valueText = transform.GetChild(2).GetComponent<TextMeshProUGUI>();
+        suitText = transform.GetChild(1).GetComponent<TextMeshProUGUI>();
+    }
+
+    void Start()
+    {
+        
     }
 
     public void SetCard(string suit, int value)
     {
         this.suit = suit;
         this.value = value;
-        UpdateArtwork();
+        valueText.text = value.ToString();
+        suitText.text = suit;
+        //UpdateArtwork();
     }
 
     void UpdateArtwork()

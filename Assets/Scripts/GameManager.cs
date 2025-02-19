@@ -48,9 +48,12 @@ public class GameManager : MonoBehaviour
             for (int j = 1; j <= 13; j++)
             {
                 GameObject cardObject = Instantiate(cardPrefab, deckParent);
+                //cardObject.transform.SetParent(canvas.transform);
                 Card card = cardObject.GetComponent<Card>();
-                card.suit = suits[i];
-                card.value = j;
+                //card.suit = suits[i];
+               // card.value = j;
+                card.SetCard(suits[i], j);
+                cardObject.name = j + " of " + suits[i];
                 deck.Add(card);
             }
         }
