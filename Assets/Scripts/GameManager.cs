@@ -6,7 +6,7 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager gm;
     public List<Card> deck = new List<Card>();
-    public GameObject cardPrefab; // Reference to the card prefab
+    public GameObject blankCardPrefab; // Reference to the blank card prefab
     public GameObject horseHearts;
     public GameObject horseDiamonds;
     public GameObject horseClubs;
@@ -47,11 +47,8 @@ public class GameManager : MonoBehaviour
         {
             for (int j = 1; j <= 13; j++)
             {
-                GameObject cardObject = Instantiate(cardPrefab, deckParent);
-                //cardObject.transform.SetParent(canvas.transform);
+                GameObject cardObject = Instantiate(blankCardPrefab, deckParent);
                 Card card = cardObject.GetComponent<Card>();
-                //card.suit = suits[i];
-               // card.value = j;
                 card.SetCard(suits[i], j);
                 cardObject.name = j + " of " + suits[i];
                 deck.Add(card);

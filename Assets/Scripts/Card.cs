@@ -40,24 +40,25 @@ public class Card : MonoBehaviour
         this.value = value;
         valueText.text = value.ToString();
         suitText.text = suit;
-        //UpdateArtwork();
+        UpdateArtwork();
     }
 
     void UpdateArtwork()
+
     {
         switch (suit)
         {
             case "hearts":
-                spriteRenderer.sprite = heartsSprite;
+                transform.GetChild(3).GetComponent<Image>().sprite = heartsSprite;
                 break;
             case "diamonds":
-                spriteRenderer.sprite = diamondsSprite;
+                transform.GetChild(3).GetComponent<Image>().sprite = diamondsSprite;
                 break;
             case "clubs":
-                spriteRenderer.sprite = clubsSprite;
+                transform.GetChild(3).GetComponent<Image>().sprite = clubsSprite;
                 break;
             case "spades":
-                spriteRenderer.sprite = spadesSprite;
+                transform.GetChild(3).GetComponent<Image>().sprite = spadesSprite;
                 break;
         }
     }
