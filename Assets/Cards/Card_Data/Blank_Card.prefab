@@ -55,7 +55,9 @@ MonoBehaviour:
   diamondsSprite: {fileID: 6586461156150141773, guid: eaa01e97e1e6d47f2b5bb505c1b9c2f5, type: 3}
   clubsSprite: {fileID: 2852610726315664299, guid: 93fa059692ae7404598ee3722d8f18c5, type: 3}
   spadesSprite: {fileID: -3604457061158422176, guid: 37508ea0437a6418b8a89dc26b9cc968, type: 3}
-  blank: {fileID: 0}
+  cardBackSprite: {fileID: -1817925529844050019, guid: 7c7b4fd557131466390ad929c3568dea, type: 3}
+  cardFront: {fileID: 3049746920215817597}
+  cardBack: {fileID: 0}
 --- !u!212 &5786913228656427290
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -138,7 +140,7 @@ RectTransform:
   m_GameObject: {fileID: 3049746920215817597}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.0054687, y: 1.0054687, z: 1.0054687}
+  m_LocalScale: {x: 1.5, y: 1.5, z: 1.0054687}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 970200069765969068}
@@ -203,14 +205,14 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 36
-  m_fontSizeBase: 36
+  m_fontSize: 50
+  m_fontSizeBase: 50
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
-  m_HorizontalAlignment: 1
+  m_HorizontalAlignment: 2
   m_VerticalAlignment: 256
   m_textAlignment: 65535
   m_characterSpacing: 0
@@ -424,7 +426,7 @@ RectTransform:
   m_GameObject: {fileID: 6418068251253816206}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.0054687, y: 1.0054687, z: 1.0054687}
+  m_LocalScale: {x: 1.5, y: 1.5, z: 1.0054687}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 970200069765969068}
@@ -489,14 +491,14 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 36
-  m_fontSizeBase: 36
+  m_fontSize: 50
+  m_fontSizeBase: 50
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
-  m_HorizontalAlignment: 1
+  m_HorizontalAlignment: 2
   m_VerticalAlignment: 256
   m_textAlignment: 65535
   m_characterSpacing: 0
