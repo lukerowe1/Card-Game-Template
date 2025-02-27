@@ -12,6 +12,11 @@ public class GameManager : MonoBehaviour
     public GameObject horseClubs;
     public GameObject horseSpades;
     public Transform deckParent; // Reference to the Deck GameObject
+    
+    // Add these new variables
+    public Vector2 deckPosition = new Vector2(0, 0); // Position of the deck
+    public Vector2 revealPosition = new Vector2(800, 0); // Position where the flipped card appears
+    public float cardSpacing = 100f; // Spacing between cards in the deck
 
     private void Awake()
     {
@@ -30,6 +35,7 @@ public class GameManager : MonoBehaviour
     {
         InitializeDeck();
         ShuffleDeck();
+        LayoutDeck(); // Add this line to position the cards
     }
 
     void Update()
@@ -67,12 +73,36 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    // Add this new method to layout the deck
+    void LayoutDeck()
+    {
+        for (int i = 0; i < deck.Count; i++)
+        {
+            if (deck[i] != null)
+            {
+                // Stack cards with a small offset
+                Vector2 position = deckPosition + new Vector2(0, -i * 0.1f);
+                deck[i].SetPosition(position);
+                deck[i].HideCard(); // Make sure all cards start face down
+            }
+        }
+    }
+
     void FlipCard()
     {
         if (deck.Count > 0)
         {
             Card flippedCard = deck[0];
             deck.RemoveAt(0);
+            
+            // Move the card to the reveal position and show it
+            RectTransform rt = flippedCard.GetComponent<RectTransform>();
+            if (rt != null)
+            {
+                rt.anchoredPosition = revealPosition;
+            }
+            
+            flippedCard.RevealCard();
             MoveHorse(flippedCard.suit);
         }
     }

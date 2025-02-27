@@ -3,7 +3,7 @@ using UnityEngine;
 public class Horse : MonoBehaviour
 {
     public string suit; // Suit associated with the horse (hearts, diamonds, clubs, spades)
-    public float moveDistance = 1.0f; // Distance to move forward
+    public float moveDistance = 10.0f; // Increased distance to move forward
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()

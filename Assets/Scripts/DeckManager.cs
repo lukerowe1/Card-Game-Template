@@ -5,9 +5,10 @@ using UnityEngine;
 public class DeckManager : MonoBehaviour
 {
     public GameObject cardPrefab;
-    public Transform cardParent; // Where to place the cards
-    public float cardSpacing = 0.5f; // Spacing between cards
-    public bool layoutInGrid = true; // Whether to lay out cards in a grid or stack
+    public Transform cardParent;
+    public float cardSpacing = 100f; // Increased spacing for better visibility
+    public Vector2 revealedCardPosition = new Vector2(800, 0);
+    public float revealedCardSpacing = 50f;
     
     private List<Card> deck = new List<Card>();
     private List<Card> revealedCards = new List<Card>();
@@ -39,18 +40,11 @@ public class DeckManager : MonoBehaviour
             cardParent = transform;
         }
         
-        if (!cardPrefab.GetComponent<Card>())
-        {
-            Debug.LogError("Card prefab does not have a Card component!");
-            return false;
-        }
-        
         return true;
     }
     
     void Update()
     {
-        // Reveal a card when space is pressed
         if (Input.GetKeyDown(KeyCode.Space))
         {
             RevealNextCard();
@@ -69,13 +63,10 @@ public class DeckManager : MonoBehaviour
                 deck.Add(card);
             }
         }
-        
-        Debug.Log($"Created deck with {deck.Count} cards");
     }
     
     void ShuffleDeck()
     {
-        // Fisher-Yates shuffle algorithm
         for (int i = 0; i < deck.Count; i++)
         {
             Card temp = deck[i];
@@ -83,76 +74,44 @@ public class DeckManager : MonoBehaviour
             deck[i] = deck[randomIndex];
             deck[randomIndex] = temp;
         }
-        
-        Debug.Log("Deck shuffled");
     }
     
     void LayoutDeck()
     {
-        if (layoutInGrid)
+        int cardsPerRow = 13;
+        for (int i = 0; i < deck.Count; i++)
         {
-            // Layout in grid
-            int cardsPerRow = 13;
-            for (int i = 0; i < deck.Count; i++)
+            if (deck[i] != null)
             {
-                int row = i / cardsPerRow;
-                int col = i % cardsPerRow;
-                
-                if (deck[i] != null && deck[i].transform != null)
+                RectTransform rt = deck[i].GetComponent<RectTransform>();
+                if (rt != null)
                 {
-                    RectTransform rt = deck[i].GetComponent<RectTransform>();
-                    if (rt != null)
-                    {
-                        // For UI cards
-                        rt.anchoredPosition = new Vector2(col * cardSpacing, -row * cardSpacing);
-                    }
-                    else
-                    {
-                        // For non-UI cards
-                        deck[i].transform.localPosition = new Vector3(col * cardSpacing, -row * cardSpacing, 0);
-                    }
+                    int row = i / cardsPerRow;
+                    int col = i % cardsPerRow;
+                    rt.anchoredPosition = new Vector2(col * cardSpacing, -row * cardSpacing);
                 }
             }
         }
-        else
-        {
-            // Stack the cards
-            for (int i = 0; i < deck.Count; i++)
-            {
-                if (deck[i] != null && deck[i].transform != null)
-                {
-                    RectTransform rt = deck[i].GetComponent<RectTransform>();
-                    if (rt != null)
-                    {
-                        // For UI cards
-                        rt.anchoredPosition = new Vector2(0, -i * 0.01f);
-                    }
-                    else
-                    {
-                        // For non-UI cards
-                        deck[i].transform.localPosition = new Vector3(0, 0, -i * 0.01f);
-                    }
-                }
-            }
-        }
-        
-        Debug.Log("Cards laid out in scene");
     }
     
     void RevealNextCard()
     {
-        // Find the first card that hasn't been revealed yet
         foreach (Card card in deck)
         {
             if (card != null && !card.IsRevealed())
             {
+                // Move card to revealed position with offset based on number of revealed cards
+                RectTransform rt = card.GetComponent<RectTransform>();
+                if (rt != null)
+                {
+                    Vector2 position = revealedCardPosition + new Vector2(revealedCards.Count * revealedCardSpacing, 0);
+                    rt.anchoredPosition = position;
+                }
+                
                 card.RevealCard();
                 revealedCards.Add(card);
-                Debug.Log($"Revealed card: {card.suit} {card.value}");
                 return;
             }
         }
-        
-        Debug.Log("No more cards to reveal!");
     }
 } 

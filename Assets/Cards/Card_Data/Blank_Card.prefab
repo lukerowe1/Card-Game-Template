@@ -54,8 +54,6 @@ MonoBehaviour:
   clubsSprite: {fileID: 2852610726315664299, guid: 93fa059692ae7404598ee3722d8f18c5, type: 3}
   spadesSprite: {fileID: -3604457061158422176, guid: 37508ea0437a6418b8a89dc26b9cc968, type: 3}
   cardBackSprite: {fileID: -1817925529844050019, guid: 7c7b4fd557131466390ad929c3568dea, type: 3}
-  cardFront: {fileID: 2719467996975601578}
-  cardBack: {fileID: 4632242214977064315}
 --- !u!212 &5786913228656427290
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -158,7 +156,7 @@ GameObject:
   - component: {fileID: 3150549954154984882}
   - component: {fileID: 6786082336705014027}
   m_Layer: 5
-  m_Name: Value
+  m_Name: ValueText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -294,7 +292,7 @@ GameObject:
   - component: {fileID: 1629808081248589238}
   - component: {fileID: 8706265603331512291}
   m_Layer: 5
-  m_Name: Sprite
+  m_Name: SuitImage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -519,7 +517,7 @@ GameObject:
   - component: {fileID: 8886601948738369484}
   - component: {fileID: 7884059924108554137}
   m_Layer: 5
-  m_Name: Suit
+  m_Name: SuitText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
