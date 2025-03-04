@@ -20,6 +20,6 @@ public class Horse : MonoBehaviour
     // Method to move the horse forward
     public void MoveForward()
     {
-        transform.Translate(Vector3.forward * moveDistance);
+        transform.position = new Vector3(transform.position.x + moveDistance, transform.position.y , transform.position.z);
     }
 }
